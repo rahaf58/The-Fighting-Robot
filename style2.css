@@ -1,0 +1,35 @@
+body {
+  background-image:url('base.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title{
+    
+     font-weight: bold;
+     color:#FF5733;
+     font-size: 25px;
+     margin-bottom:20px;
+     text-align:center;
+}
+
+.btn {
+   width:90px;
+   height:50px;
+   position:absolute;
+   display:inline-block;
+   border: 1px solid;
+   padding: 10px;
+   box-shadow: 5px 10px 18px #888888;
+   border-radius: 18px;
+   margin:0 0.3em 0.3em 0;
+   font-weight:600;
+    font-size: 16px;
+   color:white;
+   text-align:center;
+   background:#FF5733;
+   }
+
+button.btn:hover{
+   color:#FF5733;
+   background:#ffe0cc; }

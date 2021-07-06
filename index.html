@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="js.js"></script>
+<title>Robotic Arm Control interface</title>
+</head>
+<body>
+<div class="right">
+<form action="Linkk.php" method="post">
+<h1 class="title">Robotic Arm Control</h1><br><br>
+<div  class="slidecontainer" style = "top:100px;">
+    <div class="nameOfSlider"><p><b>Motor 1:</b></p></div>
+    <input type="range" name="Motor1" min="0" max="180" value="90" id="range1" class="slider1">
+    <p>180</p>
+    <p>value: </p><span id="Motor1Value" style="color:black;"></span>
+</div>
+<script>
+		 var slider1 = document.getElementById("range1");
+		 var output1 = document.getElementById("Motor1Value");
+		 output1.innerHTML = slider1.value;
+
+		 slider1.oninput = function()
+		 {
+		   output1.innerHTML = this.value;
+		 }
+
+</script>
+<div  class="slidecontainer" style = "top:160px;">
+    <div class="nameOfSlider"><p><b>Motor 2:</b></p></div>
+    <input type="range" name="Motor2" min="0" max="180" value="90" id="range2" class="slider2">
+    <p id="rangeValue">180</p>
+    <p>value: </p><span id="Motor2Value" style="color:black;"></span>
+</div>
+
+  <script>
+		 var slider2 = document.getElementById("range2");
+		 var output2 = document.getElementById("Motor2Value");
+		 output2.innerHTML = slider2.value;
+
+		 slider2.oninput = function()
+		 {
+		   output2.innerHTML = this.value;
+		 }
+</script>
+
+<div  class="slidecontainer" style = "top:220px;">
+    <div class="nameOfSlider"><p><b>Motor 3:</b></p></div>
+    <input type="range" name="Motor3" min="0" max="180" value="90" id="range3" class="slider3">
+    <p id="rangeValue">180</p>
+    <p>value: </p><span id="Motor3Value" style="color:black;"></span>
+</div>
+
+<script>
+		 var slider3 = document.getElementById("range3");
+		 var output3 = document.getElementById("Motor3Value");
+		 output3.innerHTML = slider3.value;
+
+		 slider3.oninput = function()
+		 {
+		   output3.innerHTML = this.value;
+		 }
+</script>
+
+<div  class="slidecontainer" style = "top:280px;">
+    <div class="nameOfSlider"><p><b>Motor 4:</b></p></div>
+    <input type="range" name="Motor4" min="0" max="180" value="90" id="range4" class="slider4">
+    <p id="rangeValue">180</p>
+    <p>value: </p><span id="Motor4Value" style="color:black;"></span>
+</div>
+
+<script>
+		 var slider4 = document.getElementById("range4");
+		 var output4 = document.getElementById("Motor4Value");
+		 output4.innerHTML = slider4.value;
+
+		 slider4.oninput = function()
+		 {
+		   output4.innerHTML = this.value;
+		 }
+</script>
+
+<div  class="slidecontainer" style = "top:340px;">
+    <div class="nameOfSlider"><p><b>Motor 5:</b></p></div>
+    <input type="range" name="Motor5" min="0" max="180" value="90" id="range5" class="slider5">
+    <p id="rangeValue">180</p>
+    <p>value: </p><span id="Motor5Value" style="color:black;"></span>
+</div>
+
+<script>
+		 var slider5 = document.getElementById("range5");
+		 var output5 = document.getElementById("Motor5Value");
+		 output5.innerHTML = slider5.value;
+
+		 slider5.oninput = function()
+		 {
+		   output5.innerHTML = this.value;
+		 }
+</script>
+
+<div  class="slidecontainer" style = "top:400px;">
+    <div class="nameOfSlider"><p><b>Motor 6:</b></p></div>
+    <input type="range" name="Motor6" min="0" max="180" value="0" id="range6" class="slider6">
+    <p id="rangeValue">180</p>
+    <p>value: </p><span id="Motor6Value" style="color:black;"></span>
+</div>
+
+<script>
+		 var slider6 = document.getElementById("range6");
+		 var output6 = document.getElementById("Motor6Value");
+		 output6.innerHTML = slider6.value;
+
+		 slider6.oninput = function()
+		 {
+		   output6.innerHTML = this.value;
+		 }
+</script>
+
+    <button class="button" name="Running"  style = "top:440px; left:45%;width: 120.5px;">Running</button>
+    <button class="button" name="save" value="save" type="submit" style = "top:440px; left:55%; width: 120.5px; ">Save</button>
+
+</form>
+</div>
+
+</body>
+</html>
