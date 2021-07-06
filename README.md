@@ -12,7 +12,9 @@ With five sub-tasks:
 ***
 The project allows the user to control the base of the robot by the movements of the robot base through 5 movements (forward, backward, left, right, and off). The project contains:
 
-The project homepage (Homepage.html) is an interface for merging the RobotArm and RobotBase interfaces.
+The project homepage (Homepage.html) is an interface for merging the RobotArm, RobotBase and Title interfaces.
+
+The Title page (Title.html) is Title interface.
 
 The lower part page of the project (RobotBaseControl.html) is a simple interface with 5 buttons. The user will adjust the movement of the base of the robot by pressing one of the buttons (forward, backward, left, right, and stop). Then, when a button is pressed, the movement is made to the desired destination and the values ​​are stored in the database.
 
@@ -32,7 +34,9 @@ A file (motors.sql) is included which contains the Motors table and sql queries 
 
 Background image (base.jpg) for the lower part of the robot base.
 
-Background image (arm2.jpg) for the top part of the robot arm.
+Background image (arm9.jpg) for the top part of the robot arm.
+
+Background image (images1.jpg) for the Title interface.
 
 The interface for the project homepage of Fighting Robot:
 ![image](https://user-images.githubusercontent.com/47089835/124604898-1122d480-de74-11eb-91ab-47ad087a0c2d.png)
