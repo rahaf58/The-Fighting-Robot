@@ -9,8 +9,11 @@ With five sub-tasks:
 5. Integration of two interfaces (RobotArm, RobotBase).
 
 The third task required is to create a chatbot using IBM Watson and associate it with the interface.
+
 With two sub-tasks:
+
 1-Export as a json file
+
 2-Integrate with a website
 
 ***
