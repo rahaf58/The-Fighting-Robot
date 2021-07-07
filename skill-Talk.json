@@ -1,0 +1,1183 @@
+{
+  "intents": [
+    {
+      "intent": "arm",
+      "examples": [
+        {
+          "text": "arm"
+        },
+        {
+          "text": "arm robot"
+        },
+        {
+          "text": "first"
+        },
+        {
+          "text": "Robot arm"
+        },
+        {
+          "text": "the first"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Base",
+      "examples": [
+        {
+          "text": "base"
+        },
+        {
+          "text": "base robot"
+        },
+        {
+          "text": "robot base"
+        },
+        {
+          "text": "second"
+        },
+        {
+          "text": "The second"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "No",
+      "examples": [
+        {
+          "text": "i can not"
+        },
+        {
+          "text": "maybe another time"
+        },
+        {
+          "text": "nay"
+        },
+        {
+          "text": "never"
+        },
+        {
+          "text": "nix"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "not really"
+        },
+        {
+          "text": "no way"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "start",
+      "examples": [
+        {
+          "text": "fine"
+        },
+        {
+          "text": "of course"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "okay"
+        },
+        {
+          "text": "sure"
+        },
+        {
+          "text": "yap"
+        },
+        {
+          "text": "Yeah"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "yup"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "Howdy"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1625680737497",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1625690379183",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_10_1625690379184"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1625690442265",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_10_1625690442266"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right time to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_9_1625690809679",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1625690809681",
+      "previous_sibling": "handler_1_1625690809681"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the day to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_8_1625693282539",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1625693282540",
+      "previous_sibling": "handler_4_1625693282540"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625689442870",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1625690308087",
+      "previous_sibling": "node_3_1625690693640"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right time to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_9_1625690379183",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1625690379184",
+      "previous_sibling": "handler_10_1625690379184"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right day to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_2_1625690442265",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1625690442266",
+      "previous_sibling": "handler_10_1625690442266"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1625690809679",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_1_1625690809681"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1625690811876",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_1_1625690811876"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "your phone number please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1625693225312",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1625693225325",
+      "previous_sibling": "handler_9_1625693225325"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_3_1625690693640",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1625690806097"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right day to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1625690811876",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1625690811876",
+      "previous_sibling": "handler_1_1625690811876"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "your phone number please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_8_1625691766869",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1625691766875",
+      "previous_sibling": "handler_6_1625691766875"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1625691819757",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_2_1625691819757"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "your phone number please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_3_1625690308386",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1625690308392",
+      "previous_sibling": "handler_5_1625690308392"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1625690806443",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_3_1625690806450"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_10_1625691606073",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1625691766553"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right time to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_4_1625691819757",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1625691819757",
+      "previous_sibling": "handler_2_1625691819757"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right day to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_2_1625691821846",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1625691821846",
+      "previous_sibling": "handler_9_1625691821846"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_1_1625692645821",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1625693224872"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1625693269295",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_4_1625693269308"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1625693282539",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_4_1625693282540"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1625690308386",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_5_1625690308392"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_3_1625692654887",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1625693268866"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right time to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_6_1625693279719",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1625693279719",
+      "previous_sibling": "handler_6_1625693279719"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1625693413351",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_5_1625693413352"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1625691766869",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_6_1625691766875"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1625693279719",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_6_1625693279719"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the day to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_4_1625693416655",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1625693416656",
+      "previous_sibling": "handler_7_1625693416656"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "your phone number please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_9_1625693269295",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1625693269308",
+      "previous_sibling": "handler_4_1625693269308"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is the right time to contact you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1625693413351",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1625693413352",
+      "previous_sibling": "handler_5_1625693413352"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1625693416655",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_7_1625693416656"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "your phone number please?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_7_1625690806443",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1625690806450",
+      "previous_sibling": "handler_3_1625690806450"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1625691821846",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_9_1625691821846"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1625693225312",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_9_1625693225325"
+    },
+    {
+      "type": "standard",
+      "title": "arm",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In the robot arm, you can move 6 motors. Choose the angle you want to move, then press the Save button and then Running button.\nDid you manage to do it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1625680737497",
+      "conditions": "#arm",
+      "dialog_node": "node_10_1625689234461"
+    },
+    {
+      "type": "frame",
+      "title": "Request user information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, We have your phone number $number, the time $time, and day $date for you. We will contact you. Thank you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1625689372292",
+      "conditions": "#start",
+      "dialog_node": "node_10_1625691606073"
+    },
+    {
+      "type": "frame",
+      "title": "Request user information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, We have your phone number $number, the time $time, and day $date for you. We will contact you. Thank you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625692528924",
+      "conditions": "#start",
+      "dialog_node": "node_1_1625692645821"
+    },
+    {
+      "type": "standard",
+      "title": "can run the arm robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, let's start with the other robot. The base of the robot can control the movement of the base of the game and there are 5 moves forward, backward, right, left and stop. Did you manage to do it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1625689234461",
+      "conditions": "#start",
+      "dialog_node": "node_2_1625689349285"
+    },
+    {
+      "type": "standard",
+      "title": "base",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In the base of the robot, you can control the movement of the base of the game and there are 5 moves forward, backward, right, left and stop.\nDid you manage to do it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1625680737497",
+      "conditions": "#Base",
+      "dialog_node": "node_3_1625689239006",
+      "previous_sibling": "node_10_1625689234461"
+    },
+    {
+      "type": "frame",
+      "title": "Request user information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, We have your phone number $number, the time $time, and day $date for you. We will contact you. Thank you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625689442870",
+      "conditions": "#start",
+      "dialog_node": "node_3_1625690693640"
+    },
+    {
+      "type": "standard",
+      "title": "User can run the arm robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good, see you later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1625692449265",
+      "conditions": "#start",
+      "dialog_node": "node_3_1625692523274"
+    },
+    {
+      "type": "frame",
+      "title": "Request user information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, We have your phone number $number, the time $time, and day $date for you. We will contact you. Thank you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1625692466220",
+      "conditions": "#start",
+      "dialog_node": "node_3_1625692654887"
+    },
+    {
+      "type": "standard",
+      "title": "can not run the arm robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry, give us your phone number and the appropriate time and day to contact you, and we will contact you soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1625689234461",
+      "conditions": "#No",
+      "dialog_node": "node_4_1625689372292",
+      "previous_sibling": "node_2_1625689349285"
+    },
+    {
+      "type": "standard",
+      "title": "can run the base robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, let's start with the other robot. The robot arm can move 6 motors. Choose the angle you want to move, then press the Save button and then Running button.\nDid you manage to do it?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1625689239006",
+      "conditions": "#start",
+      "dialog_node": "node_5_1625692449265"
+    },
+    {
+      "type": "standard",
+      "title": "welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello"
+              },
+              {
+                "text": "Hi"
+              },
+              {
+                "text": "Hey"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "values": [
+              {
+                "text": "Would you like to start playing?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#welcome",
+      "dialog_node": "node_7_1625666519892",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "User can run the base robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good, see you later."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1625689349285",
+      "conditions": "#start",
+      "dialog_node": "node_8_1625689440314"
+    },
+    {
+      "type": "standard",
+      "title": "User can't run the base robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry, give us your phone number and the appropriate time and day to contact you, and we will contact you soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1625689349285",
+      "conditions": "#No",
+      "dialog_node": "node_8_1625689442870",
+      "previous_sibling": "node_8_1625689440314"
+    },
+    {
+      "type": "standard",
+      "title": "can not run the base robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry, give us your phone number and the appropriate time and day to contact you, and we will contact you soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1625689239006",
+      "conditions": "#No",
+      "dialog_node": "node_8_1625692466220",
+      "previous_sibling": "node_5_1625692449265"
+    },
+    {
+      "type": "standard",
+      "title": "User can not run the arm robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Don't worry, give us your phone number and the appropriate time and day to contact you, and we will contact you soon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1625692449265",
+      "conditions": "#No",
+      "dialog_node": "node_8_1625692528924",
+      "previous_sibling": "node_3_1625692523274"
+    },
+    {
+      "type": "standard",
+      "title": "start",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let's play the Fighting Robot game. It has two robots to control. A robot for controlling the arm and the other for controlling the base of the robot.\nWhat do you want us to start?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#start",
+      "dialog_node": "node_9_1625680737497",
+      "previous_sibling": "node_7_1625666519892"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625690693640",
+      "variable": "$date",
+      "dialog_node": "slot_10_1625690811876",
+      "previous_sibling": "slot_9_1625690809679"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1625692645821",
+      "variable": "$number",
+      "dialog_node": "slot_10_1625693225312",
+      "previous_sibling": "handler_4_1625693224872"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1625692645821",
+      "variable": "$time",
+      "dialog_node": "slot_10_1625693413351",
+      "previous_sibling": "slot_10_1625693225312"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1625689442870",
+      "variable": "$date",
+      "dialog_node": "slot_2_1625690442265",
+      "previous_sibling": "slot_9_1625690379183"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1625691606073",
+      "variable": "$date",
+      "dialog_node": "slot_2_1625691821846",
+      "previous_sibling": "slot_4_1625691819757"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1625689442870",
+      "variable": "$number",
+      "dialog_node": "slot_3_1625690308386",
+      "previous_sibling": "handler_1_1625690308087"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1625691606073",
+      "variable": "$time",
+      "dialog_node": "slot_4_1625691819757",
+      "previous_sibling": "slot_8_1625691766869"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1625692645821",
+      "variable": "$date",
+      "dialog_node": "slot_4_1625693416655",
+      "previous_sibling": "slot_10_1625693413351"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625692654887",
+      "variable": "$time",
+      "dialog_node": "slot_6_1625693279719",
+      "previous_sibling": "slot_9_1625693269295"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625690693640",
+      "variable": "$number",
+      "dialog_node": "slot_7_1625690806443",
+      "previous_sibling": "handler_2_1625690806097"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1625691606073",
+      "variable": "$number",
+      "dialog_node": "slot_8_1625691766869",
+      "previous_sibling": "handler_3_1625691766553"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625692654887",
+      "variable": "$date",
+      "dialog_node": "slot_8_1625693282539",
+      "previous_sibling": "slot_6_1625693279719"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1625689442870",
+      "variable": "$time",
+      "dialog_node": "slot_9_1625690379183",
+      "previous_sibling": "slot_3_1625690308386"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625690693640",
+      "variable": "$time",
+      "dialog_node": "slot_9_1625690809679",
+      "previous_sibling": "slot_7_1625690806443"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1625692654887",
+      "variable": "$number",
+      "dialog_node": "slot_9_1625693269295",
+      "previous_sibling": "handler_5_1625693268866"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome to our site. ask us anything"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Talk",
+  "language": "en",
+  "description": ""
+}
