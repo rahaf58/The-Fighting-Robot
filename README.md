@@ -8,14 +8,6 @@ With five sub-tasks:
 4. Create a php page to connect the database to the devices.
 5. Integration of two interfaces (RobotArm, RobotBase).
 
-The third task required is to create a chatbot using IBM Watson and associate it with the interface.
-
-With two sub-tasks:
-
-1-Export as a json file.
-
-2-Integrate with a website (in RobotBaseControl.html).
-
 ***
 The project allows the user to control the base of the robot by the movements of the robot base through 5 movements (forward, backward, left, right, and off). The project contains:
 
@@ -45,7 +37,6 @@ Background image (arm9.jpg) for the top part of the robot arm.
 
 Background image (images1.jpg) for the Title interface.
 
-skill-Talk.json for chatbot.
-
 The interface for the project homepage of Fighting Robot:
-![image](https://user-images.githubusercontent.com/47089835/124835636-50434980-df8a-11eb-8b95-1e53fc7c1f3b.png)
+![image](https://user-images.githubusercontent.com/47089835/124836687-1410e880-df8c-11eb-8cb7-b2f8ca35a316.png)
+
