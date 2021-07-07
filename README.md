@@ -14,7 +14,7 @@ With two sub-tasks:
 
 1-Export as a json file.
 
-2-Integrate with a website (RobotBaseControl.html).
+2-Integrate with a website (in RobotBaseControl.html).
 
 ***
 The project allows the user to control the base of the robot by the movements of the robot base through 5 movements (forward, backward, left, right, and off). The project contains:
