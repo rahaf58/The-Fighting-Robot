@@ -21,5 +21,19 @@
         <button class="btn" name="Stop"  style = "top:160px; left:170px; width: 130.5px;">Stop</button>
 
     </form>
+      
+      <script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "fe1f2685-8de2-47cd-bce0-96d1601966ce", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "196d0762-e3a3-4026-af3d-78a33ef16517", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
     </body>
 </html>
